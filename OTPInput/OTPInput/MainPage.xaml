@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             x:Class="OTPInput.MainPage">
+
+    <Grid RowDefinitions="Auto,*" 
+          Padding="20">
+       <!-- Header Section -->
+       <VerticalStackLayout Spacing="10" 
+                            Padding="0,20">
+           <Label Text="Enter Your OTP" 
+                  FontSize="24" 
+                  FontAttributes="Bold"
+                  HorizontalTextAlignment="Center"/>
+           <Label Text="A 6-digit code has been sent to your registered email" 
+                  FontSize="14"
+                  TextColor="Gray"
+                  HorizontalTextAlignment="Center"/>
+       </VerticalStackLayout>
+
+       <!-- OTP Input Section -->
+       <VerticalStackLayout Grid.Row="1" 
+                            Spacing="30" 
+                            VerticalOptions="Center">
+           <!-- OTP Input Fields -->
+           <HorizontalStackLayout Spacing="12" 
+                                  HorizontalOptions="Center">
+               <editors:SfMaskedEntry x:Name="OTPEntry1"
+                                      WidthRequest="50"
+                                      HeightRequest="50"
+                                      MaskType="Simple"
+                                      Mask="0"
+                                      Placeholder="0"
+                                      HorizontalTextAlignment="Center"
+                                      FontSize="18"
+                                      FontAttributes="Bold"
+                                      ClearButtonVisibility="Never"
+                                      PromptChar="#"
+                                      Stroke="LightGray"
+                                      ValueChanged="OnOTPEntryTextChanged"/>
+
+               <editors:SfMaskedEntry x:Name="OTPEntry2"
+                                      WidthRequest="50"
+                                      HeightRequest="50"
+                                      MaskType="Simple"
+                                      Mask="0"
+                                      Placeholder="0"
+                                      HorizontalTextAlignment="Center"
+                                      FontSize="18"
+                                      FontAttributes="Bold"
+                                      ClearButtonVisibility="Never"
+                                      PromptChar="#"
+                                      Stroke="LightGray"
+                                      ValueChanged="OnOTPEntryTextChanged"/>
+
+               <editors:SfMaskedEntry x:Name="OTPEntry3"
+                                      WidthRequest="50"
+                                      HeightRequest="50"
+                                      MaskType="Simple"
+                                      Mask="0"
+                                      Placeholder="0"
+                                      HorizontalTextAlignment="Center"
+                                      FontSize="18"
+                                      FontAttributes="Bold"
+                                      ClearButtonVisibility="Never"
+                                      PromptChar="#"
+                                      Stroke="LightGray"
+                                      ValueChanged="OnOTPEntryTextChanged"/>
+
+               <editors:SfMaskedEntry x:Name="OTPEntry4"
+                                      WidthRequest="50"
+                                      HeightRequest="50"
+                                      MaskType="Simple"
+                                      Mask="0"
+                                      Placeholder="0"
+                                      HorizontalTextAlignment="Center"
+                                      FontSize="18"
+                                      FontAttributes="Bold"
+                                      ClearButtonVisibility="Never"
+                                      PromptChar="#"
+                                      Stroke="LightGray"
+                                      ValueChanged="OnOTPEntryTextChanged"/> 
+
+               <editors:SfMaskedEntry x:Name="OTPEntry5"
+                                      WidthRequest="50"
+                                      HeightRequest="50"
+                                      MaskType="Simple"
+                                      Mask="0"
+                                      Placeholder="0"
+                                      HorizontalTextAlignment="Center"
+                                      FontSize="18"
+                                      FontAttributes="Bold"
+                                      ClearButtonVisibility="Never"
+                                      PromptChar="#"
+                                      Stroke="LightGray"
+                                      ValueChanged="OnOTPEntryTextChanged"/>
+
+               <editors:SfMaskedEntry x:Name="OTPEntry6"
+                                      WidthRequest="50"
+                                      HeightRequest="50"
+                                      MaskType="Simple"
+                                      Mask="0"
+                                      Placeholder="0"
+                                      HorizontalTextAlignment="Center"
+                                      FontSize="18"
+                                      FontAttributes="Bold"
+                                      ClearButtonVisibility="Never"
+                                      PromptChar="#"
+                                      Stroke="LightGray"
+                                      ValueChanged="OnOTPEntryTextChanged"/>
+           </HorizontalStackLayout>
+
+           <!-- Verify Button -->
+           <Button x:Name="VerifyButton"
+                   Text="Verify OTP"
+                   Padding="20,12"
+                   CornerRadius="8"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   BackgroundColor="#512BD4"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   WidthRequest="200"
+                   Clicked="OnVerifyClicked"
+                   IsEnabled="False"/>
+
+           <!-- Result Label -->
+           <Label x:Name="ResultLabel"
+                  HorizontalTextAlignment="Center"
+                  FontSize="14"
+                  Margin="0,20"/>
+
+           <!-- Resend Section -->
+           <HorizontalStackLayout Spacing="5" 
+                                  HorizontalOptions="Center">
+               <Label Text="Didn't receive the code?" 
+                      TextColor="Gray"/>
+               <Label Text="Resend" 
+                      TextColor="#512BD4" 
+                      FontAttributes="Bold">
+                   <Label.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="OnResendClicked"/>
+                   </Label.GestureRecognizers>
+               </Label>
+           </HorizontalStackLayout>
+       </VerticalStackLayout>
+   </Grid>
+    
+</ContentPage>
